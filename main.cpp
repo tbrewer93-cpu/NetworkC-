@@ -4,13 +4,27 @@ using namespace std;
 
 class NetObject
 {
-    int i, j;
-    int idx;
+    int i, j; //Position
+    int idx; //Index
+    int w; //Weight
+    ///***Move object***///
+    ///***Delete object***///
+    ///***Print object***///
+    ///***Check weight***///
 };
 
-class Node
+class Node: NetObject
 {
-    int x, y; //Position
+    ///***Needs an internal edge list***///
+    ///***Needs an internal particle list***///
+};
+
+class Edge: NetObject
+{
+};
+
+class Particle: NetObject
+{
 };
 
 class DesignNetwork
