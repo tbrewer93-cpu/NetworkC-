@@ -12,23 +12,27 @@ class NetObject
         i = a; //X position
         j = b; //Y position
         w = wt; //Weight
-        idx = index;
+        idx = index; //Index
     }
-    ~NetObject() {}
+    ~NetObject() {
+        //Destructor
+    }
     void move(int i_new, int j_new) {
         //Move object
         i = i_new;
         j = j_new;
     }
-    ///***Delete object***///
-    ///***Print object***///
+    void print() {
+        //Print object
+        cout << i, j, idx, w;
+    }
     int gw() {
         //Get weight
         return w;
     }
-    void sw(int wt) {
+    void sw(int w_new) {
         //Set weight
-        w = wt;
+        w = w_new;
     }
     int gx() {
         //Get x position
@@ -38,32 +42,36 @@ class NetObject
         //Get y position
         return j;
     }
-    ///***Set position***///
     int gi() {
         //Get index
         return idx;
     }
-    ///***Set index***///
+    void si(int idx_new) {
+        //Set index
+        idx = idx_new;
+    }
 };
 
 class Node: NetObject
 {
     ///***Needs an internal edge list***///
+    //Getter and setter
     ///***Needs an internal particle list***///
+    //Getter and setter
     ///***Constructor***///
     ///***Destructor***///
 };
 
 class Edge: NetObject
 {
-    ///***Upper node, lower node***///
+    int un, ln; //Upper node and lower node
     ///***Constructor***///
     ///***Destructor***///
 };
 
 class Particle: NetObject
 {
-    ///***Node Occupying***///
+    int no; //Node occupying
     ///***Constructor***///
     ///***Destructor***///
 };
@@ -73,6 +81,15 @@ class DesignNetwork
     int N = 0; //Number of nodes
     int M = 0; //Number of edges
     int p = 0; //Number of particles
+
+    Node* Nodes;
+    Edge* Edges;
+    Particle* particles;
+
+    void init()
+    {
+        cout << "Run!!!" << endl;
+    }
 };
 
 int main()
