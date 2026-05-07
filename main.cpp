@@ -4,6 +4,7 @@ using namespace std;
 
 class NetObject
 {
+    public:
     int i, j; //Position
     int idx; //Index
     int w; //Weight
@@ -65,8 +66,16 @@ class Node: NetObject
 class Edge: NetObject
 {
     int un, ln; //Upper node and lower node
-    ///***Constructor***///
-    ///***Destructor***///
+    Edge(int a, int b, int wt, int index): NetObject(a, b, wt, index) {
+        //Constructor
+        un = a; //Upper node
+        ln = b; //Lower node
+        w = wt; //Weight
+        idx = index; //Index
+    }
+    ~Edge() {
+        //Destructor
+    }
 };
 
 class Particle: NetObject
