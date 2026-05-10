@@ -66,7 +66,7 @@ class Node: NetObject
 class Edge: NetObject
 {
     int un, ln; //Upper node and lower node
-    Edge(int a, int b, int wt, int index): NetObject(a, b, wt, index) {
+    Edge(int a, int b, int wt, int index): NetObject(a, b, wt, index){
         //Constructor
         un = a; //Upper node
         ln = b; //Lower node
@@ -81,8 +81,15 @@ class Edge: NetObject
 class Particle: NetObject
 {
     int no; //Node occupying
-    ///***Constructor***///
-    ///***Destructor***///
+    Particle(int a, int b, int wt, int index): NetObject (a, b, wt, index){
+        //Constructor
+        no = a; //Node occupying
+        w = wt; //Weight
+        idx = index; //Index
+    }
+    ~Particle() {
+        //Destructor
+    }
 };
 
 class DesignNetwork
@@ -104,6 +111,7 @@ class DesignNetwork
 int main()
 {
     cout << "Hello Network!" << endl;
-
+    ///***Need inputter for nodes, edges, particles***///
+    ///***Some kind of outputter for plotting network***///
     return 0;
 }
